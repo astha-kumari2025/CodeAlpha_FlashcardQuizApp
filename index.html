@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="brand">📚 FlashLearn</div>
+        <p>Your little space to learn something new</p>
+    </header>
+
+    <main class="container">
+        <section class="top-section">
+            <div>
+                <h1>Flashcard Quiz</h1>
+                <p class="subtitle">Learn, practice, and remember.</p>
+            </div>
+            <button id="addCardBtn" class="primary-btn">+ Add Flashcard</button>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span>Total Cards</span>
+                <strong id="totalCards">0</strong>
+            </div>
+            <div class="stat-card">
+                <span>Current Card</span>
+                <strong id="currentCard">0 / 0</strong>
+            </div>
+        </section>
+
+        <section class="flashcard-area">
+            <div class="card" id="flashcard">
+                <span class="card-label" id="cardLabel">QUESTION</span>
+                <h2 id="cardText">Loading your flashcards...</h2>
+                <p id="cardHint">Think about your answer first!</p>
+                <button id="showAnswerBtn" class="answer-btn">Show Answer</button>
+            </div>
+
+            <div class="navigation">
+                <button id="prevBtn" class="secondary-btn">← Previous</button>
+                <button id="nextBtn" class="primary-btn">Next →</button>
+            </div>
+        </section>
+
+        <section class="manage-section">
+            <h2>Manage Your Cards</h2>
+            <p>Add your own questions, or edit and delete existing cards.</p>
+            <div id="cardList" class="card-list"></div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="closeModalBtn" class="close-btn" aria-label="Close">×</button>
+            <h2 id="modalTitle">Add a Flashcard</h2>
+
+            <form id="cardForm">
+                <label for="questionInput">Question</label>
+                <textarea id="questionInput" placeholder="Enter your question..." required></textarea>
+
+                <label for="answerInput">Answer</label>
+                <textarea id="answerInput" placeholder="Enter the answer..." required></textarea>
+
+                <div class="form-actions">
+                    <button type="button" id="cancelBtn" class="secondary-btn">Cancel</button>
+                    <button type="submit" class="primary-btn">Save Card</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        Made with ❤️ for curious minds
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
